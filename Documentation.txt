@@ -1,0 +1,35 @@
+All textures must have .TGA format with available alpha channel.
+Only square resolutions with power of 2 pixels (64/128/1024/2048 etc) acceptable.
+
+Textures has been remastered in several steps:
+1) Convert original TGA file to JPEG
+2) Enlarge JPEG picture via AI Gigapixel programm (https://topazlabs.com/gigapixel-ai/)
+Usually x4 scale factor used but in some cases x8 or even x16 used. (e.g. for backgrounds)
+3) Convert JPEG to TGA without alpha-channel
+4) Enlarge original TGA file with simple bicubic interpolation.
+5) Copy alpha-channel from simply enlarged original TGA file to JPEG-sourced TGA
+6) Save as final texture
+7) Profit
+
+Folders m032-m256 contains unique textures happened to be the biggest in the original files.
+E.g. if Dragon texture exist in original m256, m128 and m64, in this repository it will be only in m256 folder
+
+/Texture path:
+	Folder ClassIcons contains full set of files, enlarged.
+	Folder Misc contain only part of files, that were supposed to be enlarged
+	Folder Gray is not represented at all
+/Ground
+	All files in place enlarged x4
+	
+Logic for /Ground textures:
+- There are 3 basic type of grounds - A, B, C with 15 examples for each. Alpha channel is always black (nothing visible)
+  These textures can be observed in any world, they are universal.
+  gnd_c04.tga for example.
+- There are 14 types of masks, supposed to smooth transition on the connection between 2 typ of grounds.
+  On the connection edge single polygon is textured with 2 grounds simulatenously, and applied transition masks as alpha channel.
+  msk_aabb01.tga for example
+- There are lots of world-specific details textures that are visualized on top of the ground giving each world atmosphere.
+  All has prefix of the world in the beginning and actively use alpha channel
+  kris_1001.tga or urw_0101.tga for example
+There is engiene restriction not to apply transition masks for areas larger than equivalent of 64x64 starting from top. 
+Thats mean for 256x256 ground textures will not have smooth transitions on the splits and will have rough edges.
