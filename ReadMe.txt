@@ -28,10 +28,10 @@ Implementing Full version:
 			\Data\Texture\m128
 			\Data\Texture\m256
 		b) Copy files
-			FROM \HdMod_ru_full\Textures\m032 TO \Data\Texture\m256
-			FROM \HdMod_ru_full\Textures\m064 TO \Data\Texture\m256
-			FROM \HdMod_ru_full\Textures\m128 TO \Data\Texture\m256
-			FROM \HdMod_ru_full\Textures\m256 TO \Data\Texture\m256
+			FROM \FullVersion\Textures\m032 TO \Data\Texture\m256
+			FROM \FullVersion\Textures\m064 TO \Data\Texture\m256
+			FROM \FullVersion\Textures\m128 TO \Data\Texture\m256
+			FROM \FullVersion\Textures\m256 TO \Data\Texture\m256
 		c) Copy and replace files with same path:
 			\Data\Texture\Misc
 			\Data\Texture\ClassIcons
