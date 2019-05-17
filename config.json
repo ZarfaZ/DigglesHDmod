@@ -82,7 +82,7 @@
 		},
 		{
 			"type" : "optional",
-			"path" : "Data/Ground/",
+			"path" : "Data/Ground",
 			"condition" : {
 				"type" : "variable",
 				"id" : "GROUND_TEXTURES",
