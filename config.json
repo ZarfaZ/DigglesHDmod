@@ -1,0 +1,93 @@
+{
+	"version" : "0.1",
+	"author" : "ZarfaZ",
+	
+	"name" :  {
+		"en" : "HD mod",
+		"de" : "HD Mod"
+	},
+	"description" : {
+		"en" : "Mod for high resolution textures",
+		"de" : "Mod für hochauflösende Texturen"
+	},
+	
+	"links" : {
+		"download" : "https://github.com/ZarfaZ/DigglesHDmod/releases",
+		"wiki" : "https://github.com/ZarfaZ/DigglesHDmod/blob/master/Documentation.txt"
+	},
+	
+	"settings" : [
+		{
+			"id" : "LANGUAGE",
+			"type" : "select",
+			"default" : "ru",
+			"name" :  {
+				"en" : "Language",
+				"de" : "Sprache"
+			},
+			"description" : {
+				"en" : "Installs language specific textures of chosen language.",
+				"de" : "Installiert sprachspezifische Texturen der ausgewählten Sprache."
+			},
+			"possibleValues" : [
+				{
+					"value" : "de",
+					"name" : {
+						"en" : "German",
+						"de" : "Deutsch"
+					}
+				},
+				{
+					"value" : "ru",
+					"name" : {
+						"en" : "Russian",
+						"de" : "Russisch"
+					}
+				}
+			]
+		},
+		{
+			"id" : "GROUND_TEXTURES",
+			"type" : "bool",
+			"default" : true,
+			"name" :  {
+				"en" : "Ground textures",
+				"de" : "Bodentexturen"
+			},
+			"description" : {
+				"en" : "Add high resolution ground textures",
+				"de" : "Hochauflösende Bodentexturen hinzufügen"
+			}
+		}
+	],
+	
+	"directories" : [
+		{
+			"type" : "data",
+			"path" : "Data_de",
+			"condition" : {
+				"type" : "variable",
+				"id" : "LANGUAGE",
+				"value" : "de"
+			}
+		},
+		{
+			"type" : "data",
+			"path" : "Data_ru",
+			"condition" : {
+				"type" : "variable",
+				"id" : "LANGUAGE",
+				"value" : "ru"
+			}
+		},
+		{
+			"type" : "optional",
+			"path" : "Data/Ground",
+			"condition" : {
+				"type" : "variable",
+				"id" : "GROUND_TEXTURES",
+				"value" : true
+			}
+		}
+	]
+}
